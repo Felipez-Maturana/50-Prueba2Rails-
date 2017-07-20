@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: neumaticos_production
-  username: neumaticos
-  password: <%= ENV['NEUMATICOS_DATABASE_PASSWORD'] %>
+  database: d62a5c5ng651bt
+  username: zfbhwhjsbxdyzq
+  password: 974f8638643ce45fe193ee5a98321e8bbe0a15cc1c70661fa4373a27b913ebda
