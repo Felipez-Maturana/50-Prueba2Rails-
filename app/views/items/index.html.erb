@@ -1,0 +1,41 @@
+<h1 style="text-align: center">Lista de items</h1>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+    	<table class="table table-list-search">
+	        <thead>
+	            <tr>
+	                <th><i>Nombre</i></th>
+                    <th><i>Serie</i></th>
+                    <th><i>Tamaño</i></th>
+                    <th><i>Categoría</i></th>
+                    <th><i>Usuario a cargo</i></th>
+                    <th><i>Descripción</i></th>
+                    <th><i></i></th>
+	            </tr>
+	        </thead>
+	        <tbody>
+            	<% @items.each do |product| %>
+		            <tr>
+		                <td><%= product.name %></td>
+		                <td><%= product.serie %></td>
+		                <th><%= product.size %></th>
+		                <td><%= product.category.name %></td>
+		                <% if(product.user.nil? ) %>
+		                <td style="color: red">No tiene</td>
+		                <% else %>
+						<td style="color: green"><%= product.user.name %></td>
+						<% end %>
+						<th><%= product.description %></th>
+						
+		                <!-- <td><a style="height: 25px" class="label label-danger">Borrar</a></td> -->
+		                <td> <%= button_to "delete", {:controller => :items,
+      :action => 'destroy', :id => product.id }, :method => :delete %> </td>
+		            </tr>
+                <% end  %>
+	        </tbody>
+        </table>   
+		</div>
+	</div>
+</div>
